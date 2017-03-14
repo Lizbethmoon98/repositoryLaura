@@ -9,6 +9,7 @@
 	Accede al link que quieras 
 </h1>
 <a href ="listar">Mostrar todos los productos!</a>
+<a href ="crear">Crear un producto!</a>
 
 </body>
 </html>

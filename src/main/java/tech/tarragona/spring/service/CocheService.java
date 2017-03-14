@@ -18,5 +18,10 @@ public class CocheService {
 		return cocheRepository.findAll();
 	
 	}
-
+	
+	@Transactional
+	public Coche crearCoche(Coche coche) {
+		return cocheRepository.save(coche);
+		
+	}
 }

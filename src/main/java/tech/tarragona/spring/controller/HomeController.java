@@ -1,13 +1,19 @@
 package tech.tarragona.spring.controller;
 
 
+import javax.validation.Valid;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import tech.tarragona.spring.model.Coche;
 import tech.tarragona.spring.repository.CocheRepository;
 import tech.tarragona.spring.service.CocheService;
 
@@ -42,4 +48,20 @@ public class HomeController {
 		return "listar";
 				
 	}
+	
+	@GetMapping("/crear")
+	public String addPerson(Model model) {
+		model.addAttribute("coche", new Coche());
+		return "crear";
+	}
+
+	/*
+	 * ADD PERSON AND PEOPLE REDIRECT
+	 */
+	@PostMapping("/crear")
+	public String addPerson(@ModelAttribute("coche") Coche coche, BindingResult result, Model model) {
+	
+			cocheService.crearCoche(coche);
+			return "home";	
+		}
 }
