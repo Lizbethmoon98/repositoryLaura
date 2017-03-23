@@ -6,9 +6,9 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-
 import com.bar.model.Menu;
 import com.bar.service.MenuService;
 
@@ -43,5 +43,11 @@ public class BarController {
 			menuService.addMenu(menu);
 			return "home";	
 		}
+	@GetMapping("/{plate}")
+	public String getUser(@PathVariable String plate, Model model) {
+		Menu menu = menuService.showPlate(plate);
+		model.addAttribute("menu", menu);
+		return "showPlate";
+	}
 
 }

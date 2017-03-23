@@ -18,13 +18,15 @@
 			<th>matricula</th>
 			<th>modelo</th>
 			<th>precio</th>
+			<th>Mirar plato</th>
 		</tr>
 		<c:forEach items="${menu}" var="menu">
+		<spring:url value="/${menu.plate}" var="menuURL" />
 			<tr>
-
 				<td><c:out value="${menu.plate}"></c:out></td>
 				<td><c:out value="${menu.description}"></c:out></td>
 				<td><c:out value="${menu.price} €"></c:out></td>
+				<td><a href="${menu.plate}" class="btn btn-default btn-xs" role="button">Mirar Plato</a></td>				
 			</tr>
 		</c:forEach>
 	</table>
