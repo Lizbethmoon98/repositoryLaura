@@ -12,7 +12,7 @@
 		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd">
 
 		<!-- Configure the data source bean -->
-		<jee:jndi-lookup id="dataSource" jndi-name="java:comp/env/jdbc/carsDS"/>
+		<jee:jndi-lookup id="dataSource" jndi-name="java:comp/env/jdbc/menuDS"/>
 		
 		<bean id="eclipseLinkJpaVendorAdapter" class="org.springframework.orm.jpa.vendor.EclipseLinkJpaVendorAdapter">
 			<property name="showSql" value="true" />
@@ -28,7 +28,7 @@
 			       <prop key="eclipselink.weaving">false</prop>
 			     </props>
 	   		</property>
-		    <property name="packagesToScan" value="tech.tarragona.spring.model"/>
+		    <property name="packagesToScan" value="com.bar.model"/>
 		</bean>
 	
 		<!-- Configure the transaction manager bean -->
@@ -39,5 +39,5 @@
 		 <!-- Enable annotation driven transaction management -->
 		 <tx:annotation-driven/>
 	
-		 <jpa:repositories base-package="tech.tarragona.spring.repository" />
+		 <jpa:repositories base-package="com.bar.repository" />
 </beans>
