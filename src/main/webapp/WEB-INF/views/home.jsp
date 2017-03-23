@@ -5,11 +5,17 @@
 	<title>home</title>
 </head>
 <body>
-<h1>
-	Accede al link que quieras 
-</h1>
-<a href ="show">Mostrar todos los platos!</a>
-<a href ="add">Añadir un plato!</a>
+	<div class="page-header col-xs-8">
+		<h1>ACCEDE DONDE QUIERAS</h1>
+	</div>
+	
+		<div class="col-xs-8">
+			<br><a href="show" class="btn btn-default" role="button">Mostrar todos los platos!</a>
+		</div>
+		<br>
+		<div class="col-xs-8">
+			<br><a href="add" class="btn btn-default" role="button">Añadir un plato!</a>
+		</div>
 
 </body>
 <!-- Latest compiled and minified CSS -->

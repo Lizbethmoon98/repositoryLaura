@@ -5,23 +5,34 @@
 <title> Añadir plato</title>
 </head>
 <body>
-
-<h2>Añadir plato</h2>
+	<div class="page-header col-xs-8">
+		<h1>AÑADIR PLATO</h1>
+	</div>
 
 	<form:form modelAttribute="menu">
+
+		<div class="col-xs-8">
+			<br><form:label path="plate"> Introducir nombre del plato</form:label>
+			<br><form:input path="plate" class="form-control input-lg"/>
+		</div>
+		<br>
+		<div class="col-xs-8">
+			<br><form:label path="description"> Introducir descripcion</form:label>
+			<br><form:textarea path="description" class="form-control" rows="3"/>
+		</div>
+		<div class="col-xs-8">
+			<br><form:label path="price"> Introducir precio</form:label>
+			<br><form:input path="price" class="form-control"/>
+		</div>
+		<div class="col-xs-8">
+			<br><button type="submit" class="btn btn-warning">AÑADIR!</button>
+		</div>
+		</form:form>
 		
-		<br><form:label path="plate"> Introducir matricula</form:label>
-		<br><form:input path="plate" />
-		
-		<br><form:label path="description"> Introducir modelo</form:label>
-		<br><form:input path="description" />
-		
-		<br><form:label path="price"> Introducir precio</form:label>
-		<br><form:input path="price" />
-		
-		<br><button type="submit">AÑADIR!</button>
-				
-	</form:form>
+		<div class="col-xs-8">
+			<br><a href="show" class="btn btn-default btn-sm" role="button">volver</a>
+		</div>
+	
 </body>
 <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" 

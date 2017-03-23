@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="ISO-8859-1"%>
+    pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -8,9 +8,13 @@
 <title>carta</title>
 </head>
 <body>
-	<h1>CARTA</h1>
-	<table>
-		<tr>
+	
+	<div class="page-header col-xs-8">
+		<h1>NUESTROS PLATOS <small>Gastronomía colombiana</small></h1>
+	</div>
+	<div class="col-xs-12">
+	<table class="table table-hover">
+		<tr class="warning">
 			<th>matricula</th>
 			<th>modelo</th>
 			<th>precio</th>
@@ -20,10 +24,14 @@
 
 				<td><c:out value="${menu.plate}"></c:out></td>
 				<td><c:out value="${menu.description}"></c:out></td>
-				<td><c:out value="${menu.price}"></c:out></td>
+				<td><c:out value="${menu.price} €"></c:out></td>
 			</tr>
 		</c:forEach>
 	</table>
+	</div>
+	<div class="col-xs-8">
+			<br><a href="add" class="btn btn-default btn-sm" role="button">Añadir plato</a>
+	</div>
 </body>
 <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" 
